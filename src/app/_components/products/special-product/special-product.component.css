@@ -1,0 +1,54 @@
+mat-grid-tile {
+  background: #ffffff;
+}
+
+.page-title {
+  padding-left: 3%;
+}
+
+.mat-form-field {
+  width: 90% !important;
+}
+
+.mat-button {
+  background-color: #48494B;
+}
+
+.mat-form-field {
+  margin: 40px 0;
+  width: 500px !important;
+}
+
+.mat-toolbar-single-row {
+  height: auto !important;
+  background: transparent;
+}
+
+.mat-toolbar-single-row button {
+  width: 200px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.float-left {
+  margin-left: -55% !important;
+}
+
+.float-right {
+  margin-left: 70% !important;
+}
+
+.btn-size {
+  cursor: pointer;
+}
+
+.input-box {
+  font-size: 16px;
+  font-size: max(16px, 1em);
+  font-family: inherit;
+  padding: 0.25em 0.5em;
+  background-color: transparent;
+  width: 90% !important;
+}

@@ -1,0 +1,49 @@
+<div class="container1">
+  <mat-card>
+    <div class="page-title">
+      <mat-card-title>Add Resort Features</mat-card-title>
+    </div>
+    <br />
+    <form [formGroup]="pricingForm" (ngSubmit)="addSpecialProduct()">
+      <mat-grid-list cols="2" rowHeight="5:1">
+        <table style="width: 70%;">
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              <button type="button" (click)="addItem()" mat-mini-fab color="primary" class="right-float"
+                aria-label="Example icon button with a plus one icon">
+                <i class="material-icons">add</i>
+              </button>
+            </td>
+          </tr>
+          <tbody *ngFor="let data of productList; let in=index">
+            <tr>
+              <td></td>
+              <td>
+                <input *ngIf="data.benefits" class="input-box" value="{{data.benefits}}" readonly />
+                <span> <i class="material-icons btn-size" (click)="deleteBenefit(data.key)">clear</i></span>
+              </td>
+            </tr>
+          </tbody>
+          <tbody formArrayName="items">
+            <tr *ngFor="let item of formArr.controls; let i=index" [formGroupName]="i">
+              <td></td>
+              <td>
+                <input class="input-box" formControlName="description" autocomplete="off" required>
+                <span> <i class="material-icons btn-size" (click)="removeItem(i)">clear</i></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <mat-grid-tile>
+
+        </mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile>
+          <span><button mat-raised-button color="primary" class="mat-button float-left">Submit</button></span>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </form>
+  </mat-card>
+</div>

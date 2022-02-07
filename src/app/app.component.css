@@ -1,0 +1,17 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.title-center {
+    flex: 6 1 auto;
+    text-align: center;
+    font-size: 24px;
+}
+
+.mat-drawer {
+    width: 150px;
+}
+
+.mat-button {
+    background-color: #48494B;
+}

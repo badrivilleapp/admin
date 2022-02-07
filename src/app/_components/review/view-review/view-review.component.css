@@ -1,0 +1,37 @@
+.mat-card {
+  width: 100%;
+}
+
+.top-padding {
+  padding-top: 10px;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.review-flag-img {
+  height: 30px;
+  width: 30px;
+}
+
+.review-desc {
+  font-family: 'Verdana, Geneva, Tahoma, sans-serif';
+  font-style: italic;
+}
+
+.review-strip span {
+  font-style: italic;
+}
+
+.review-name {
+  font-weight: bold;
+}
+
+.review-place {
+  font-size: 14px;
+}

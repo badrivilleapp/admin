@@ -1,0 +1,30 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="default" color="#fff" type="ball-spin" [fullScreen]="true">
+  <p style="color: white"> Loading... </p>
+</ngx-spinner>
+<mat-drawer-container [class.drawer-opened]="drawer.opened" class="example-container">
+  <mat-drawer #drawer class="drawer" mode="side" opened="true">
+    <mat-toolbar class="header">
+      <img src="../../../../assets/images/logo_sticky.png" class="logo-img">
+      <mat-icon class="close" (click)="drawer.close()">close</mat-icon>
+    </mat-toolbar>
+    <div class="contents">
+      <app-sidenav></app-sidenav>
+    </div>
+  </mat-drawer>
+  <mat-toolbar>
+    <button *ngIf="!drawer.opened" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon (click)="drawer.toggle()">
+        menu
+      </mat-icon>
+    </button>
+    <span class="title-center">Badriville</span>
+    <span class="example-spacer"></span>
+    <button mat-raised-button color="primary" class="mat-button" (click)="onAuthLogout()">Logout</button>
+  </mat-toolbar>
+  <div class="main contents">
+    <router-outlet></router-outlet>
+   
+    <app-footer></app-footer>
+  </div>
+</mat-drawer-container>
+

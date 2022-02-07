@@ -1,0 +1,56 @@
+<div class="container1">
+  <mat-card>
+    <div class="page-title">
+      <mat-card-title>Add Product</mat-card-title>
+    </div>
+    <app-file-input allowMultiple="true" removeButtonLabel="Remove Applications"></app-file-input>
+    <form #authForm="ngForm" role="form" [formGroup]="options" class="top-padding">
+      <mat-grid-list cols="2" rowHeight="5:1">
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" [hideRequiredMarker]="hideRequiredControl.value"
+            [floatLabel]="floatLabelControl.value">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Herbal Tea, Pahadi Rajma" formControlName="title" required>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" [hideRequiredMarker]="hideRequiredControl.value"
+            [floatLabel]="floatLabelControl.value">
+            <mat-label>Price</mat-label>
+            <input matInput placeholder="Ruppes in INR" formControlName="price" required>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field>
+            <div>
+              <mat-toolbar>
+                <!-- Display files names -->
+                <input matInput placeholder={{fileAttr}} readonly name="name" />
+
+                <!-- Browse Button -->
+                <button mat-flat-button color="primary">
+                  Browse File
+                </button>
+              </mat-toolbar>
+
+              <!-- Fetch selected filed on change -->
+              <input type="file" class="browser-btn" (change)="selectFile($event)" id="uploadFile" name="uploadFile"
+                accept="image/*" />
+            </div>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile>
+          <button mat-raised-button color="primary" class="right-float mat-button" [disabled]="!selectedFiles"
+            (click)="upload()" [disabled]="isDisabled">ADD</button>
+        </mat-grid-tile>
+        <mat-grid-title>
+
+          <mat-progress-bar *ngIf="currentFileUpload" mode="determinate" value="{{ percentage }}"></mat-progress-bar>
+
+        </mat-grid-title>
+      </mat-grid-list>
+    </form>
+  </mat-card>
+
+</div>

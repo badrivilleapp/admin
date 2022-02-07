@@ -1,0 +1,96 @@
+<div class="container1">
+  <mat-card>
+    <div class="page-title">
+      <mat-card-title>Add Activity</mat-card-title>
+    </div>
+    <app-file-input allowMultiple="true" removeButtonLabel="Remove Applications"></app-file-input>
+
+    <mat-progress-bar *ngIf="currentFileUpload" mode="determinate" value="{{ percentage }}"></mat-progress-bar>
+
+    <form #authForm="ngForm" role="form" [formGroup]="options" (ngSubmit)="createActivity()">
+      <mat-grid-list cols="2" rowHeight="5:1">
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" [hideRequiredMarker]="hideRequiredControl.value"
+            [floatLabel]="floatLabelControl.value">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Spiritual tour, Village tour.." formControlName="title" required>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" [hideRequiredMarker]="hideRequiredControl.value"
+            [floatLabel]="floatLabelControl.value">
+            <mat-label>Location</mat-label>
+            <input matInput placeholder="Badrinath.." formControlName="location">
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field>
+            <div>
+              <mat-toolbar>
+                <!-- Display files names -->
+                <input matInput placeholder={{fileAttr}} readonly name="name" />
+
+                <!-- Browse Button -->
+                <button mat-flat-button color="primary">
+                  Browse File
+                </button>
+              </mat-toolbar>
+
+              <!-- Fetch selected filed on change -->
+              <input type="file" class="browser-btn" id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile"
+                accept="image/*" />
+            </div>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field>
+            <div>
+              <mat-toolbar>
+                <input matInput placeholder={{iconAttr}} readonly name="icon" />
+
+                <button mat-flat-button color="primary">
+                  Browse File
+                </button>
+              </mat-toolbar>
+
+              <input type="file" class="browser-btn" id="uploadFile" (change)="uploadIconEvt($event)" name="uploadFile"
+                accept="image/*" />
+            </div>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" [hideRequiredMarker]="hideRequiredControl.value"
+            [floatLabel]="floatLabelControl.value">
+            <mat-label>Banner name</mat-label>
+            <input matInput placeholder="Relax, Heritage.." formControlName="banner_name" required>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" [hideRequiredMarker]="hideRequiredControl.value"
+            [floatLabel]="floatLabelControl.value">
+            <mat-label>Banner color</mat-label>
+            <mat-select formControlName="banner_color">
+              <mat-option *ngFor="let item of bannerColor" [value]="item.class">
+                {{item.value}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" [hideRequiredMarker]="hideRequiredControl.value"
+            [floatLabel]="floatLabelControl.value">
+            <mat-label>Link to</mat-label>
+            <mat-select formControlName="path">
+              <mat-option *ngFor="let item of pageLink" [value]="item.path">
+                {{item.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <button mat-raised-button color="primary" class="right-float mat-button" [disabled]="isDisabled">ADD</button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </form>
+  </mat-card>
+</div>

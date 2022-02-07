@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~ngx-toastr/toastr.css';
+@import "~bootstrap/dist/css/bootstrap.css";
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.theme-color {
+  background-color: #48494B;
+  color: #ffffff;
+  text-align: center;
+}
+
+.mouse-pointer {
+  cursor: pointer;
+}
+
+.right-float {
+  float: right;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+.container1 {
+  padding: 2%;
+  border-radius: 6px;
+  opacity: 1;
+  flex: auto;
+  flex-wrap: wrap;
+  height: 100vh;
+  overflow: scroll;
+}
