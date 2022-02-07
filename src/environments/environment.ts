@@ -5,14 +5,14 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyALekqOlwhz9wwK31_fVzYB1TWzIBiVTe0",
-    authDomain: "admin-9bf91.firebaseapp.com",
-    databaseURL: "https://admin-9bf91-default-rtdb.firebaseio.com",
-    projectId: "admin-9bf91",
-    storageBucket: "admin-9bf91.appspot.com",
-    messagingSenderId: "458758247311",
-    appId: "1:458758247311:web:80a2968f9f743480d771fa",
-    measurementId: "G-RD4E3SK24N"
+    apiKey: "AIzaSyCu3zCEbfcFeYbZONfYkruRTrfUW2YF0-Y",
+    authDomain: "badriville-dashboard.firebaseapp.com",
+    databaseURL: "https://badriville-dashboard-default-rtdb.firebaseio.com",
+    projectId: "badriville-dashboard",
+    storageBucket: "badriville-dashboard.appspot.com",
+    messagingSenderId: "412194973200",
+    appId: "1:412194973200:web:e105be07be793fbc8fcc95",
+    measurementId: "G-KKXJZS7V66"
   }
 };
 
